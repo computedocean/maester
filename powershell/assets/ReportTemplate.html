@@ -17253,7 +17253,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
 `,md+=`| Name | Severity | Result |
 `,md+=`| :--- | :---: | :---: |
-`,results.Tests.forEach(test=>{const safeName=test.Name.replace(/\|/g,"\\|");md+=`| ${safeName} | ${test.Severity} | ${test.Result} |
+`,results.Tests.forEach(test=>{const safeName=test.Name.replace(/\\/g,"\\\\").replace(/\|/g,"\\|");md+=`| ${safeName} | ${test.Severity} | ${test.Result} |
 `}),md+=`
 `,md+=`## Test Details
 
